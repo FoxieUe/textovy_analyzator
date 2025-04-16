@@ -39,12 +39,12 @@ uzivatele = {
     "liz":"pass123"
 
 }
-oddelovac = "-" * 40
+SEPARATOR = "-" * 40
 
 username = input("username:")
 password = input("password:")
 
-print(oddelovac)
+print(SEPARATOR)
 
 if username not in uzivatele or uzivatele[username] != password:
     print(f"We are sorry {username} is not registered")
@@ -52,12 +52,14 @@ if username not in uzivatele or uzivatele[username] != password:
 else:
     print(f"Welcome to the app, {username}")
     print(f"We have {len(TEXTS)} texts to be analyzed.")
-    print(oddelovac)
+    print(SEPARATOR)
 
-user_num_choice = input(f"Enter a number btw. {1} and {len(TEXTS)} to select:")
+user_num_choice = input(
+    f"Enter a number btw. {1} and {len(TEXTS)} to select:"
+)
 if user_num_choice.isdigit():
     user_num_choice = int(user_num_choice)
-    print(oddelovac)
+    print(SEPARATOR)
 else:
     print(f"{user_num_choice} není číslo")
     exit()
@@ -79,27 +81,25 @@ text_lowercase = 0
 for wordst in words_text:
     if wordst.istitle():
         text_titlecase += 1
-print(f"There are {text_titlecase} titlecase words.")
-
-for wordst in words_text:
-    if wordst.isupper():
+    elif wordst.isupper():
         text_uppercase += 1
-print(f"There are {text_uppercase} uppercase words.")
-
-for wordst in words_text:
-    if wordst.islower():
+    elif wordst.islower():
         text_lowercase += 1
+
+print(f"There are {text_titlecase} titlecase words.")
+print(f"There are {text_uppercase} uppercase words.")
 print(f"There are {text_lowercase} lowercase words.")
 
 for wordsn in words_text:
     if wordsn.isdigit():
         digits_total += int(wordsn)
         digits_text += 1
+
 print(f"There are {digits_text} numeric strings.")
 print(f"The sum of all the numbers {digits_total}")
-print(oddelovac)
+print(SEPARATOR)
 print("LEN|  OCCURENCES  |NR.")
-print(oddelovac)
+print(SEPARATOR)
 
 cleaned_words = []
 for words in words_text:
