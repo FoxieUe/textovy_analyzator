@@ -1,3 +1,9 @@
+"""
+projekt_1.py: první projekt do Engeto Online Python Akademie
+
+author: Marek Procházka
+email: pokefuck@icloud.com
+"""
 TEXTS = [
     '''Situated about 10 miles west of Kemmerer,
     Fossil Butte is a ruggedly impressive
